@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Starbucks</title>
+</head>
+<body>
+ <!--HEADER-->
+    <header>
+        <nav class="navbar">
+          <img src="/src/images/logo-starbucks.png"
+           alt="Logo Star bucks" 
+           class="logo">
+           <!--O termo btn btn não é uma tag nativa do HTML, mas sim um par de classes CSS amplamente utilizado no framework Bootstrap para estilizar botões. btn: É a classe base que define os estilos padrão de um botão (formato, espaçamento, bordas)-->
+           <button class="btn btn-mobile">
+           <i class="fa-solid fa-bars"></i>
+           </button>
+          <!--As tags <ul> e <li> no HTML são utilizadas juntos para criar listas não ordenadas, geralmente marcadas por "bolinhas" (bullets)-->
+           <ul id="nav-links">
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                 <a href="#trending">Em alta</a>
+            </li>
+            <li> <a href="#About">Sobre nós</a></li>
+            <li>
+                 <a href="#products">Novidades</a>
+            </li>
+           </ul>
+            <a href="Whatsapp:+5531984431868" class="btn btn-default">Contatar</a>
+
+        </nav>
+    </header>
+    <!--MAIN-->
+    <main id="container">
+        <!--HOME-->
+        <section id="home">
+            <img 
+            src="/src/images/detail.png"
+             alt="Stabucks drink"
+             class="home image">
+             <h1 class="home-title">
+                Mais que café, uma
+                <span>experiência</span>
+             </h1>
+             <p class="home-description">
+                Descubra cafés icônicos, sabores únicos e a energia
+                perfeita para cada parte do seu dia!
+             </p>
+            <div class="home-actions">
+                <a href="https://www.starbucks.com.br/cafe" class="btn btn-default">Conhecer</a>
+                <a href="tel:+5531984431868" class="btn btn-outlined">Contatar</a>
+            </div>
+        </section>
+    </main>
+    <script src="/js/script.js"></script>
+</body>
+</html>

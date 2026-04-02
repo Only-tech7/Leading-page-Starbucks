@@ -1,0 +1,76 @@
+header {
+    background-color: var(--color-neutral-1);
+    padding: 12px 4%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo{
+            width: 180px;
+        }
+        ul{
+            display: none;
+            list-style: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 100%;
+            position: absolute;
+            top: 80px;
+            background-color: var(--color-neutral-1);
+            left: 0;
+            padding: 1rem;
+
+        &.show{
+            display: flex;
+        }
+        li {
+            text-align: center;
+            a {
+                color: var(--color-neutral-8);
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: 500;
+                transition: all 0.4s ease;
+
+                /* "&" (E comercial): Representa o seletor pai. Ele diz que o estilo hover deve ser aplicado ao mesmo elemento onde essa regra está escrita.
+                ":hover:" É uma pseudo-classe que detecta quando o ponteiro do mouse está sobre um elemento.*/
+                &:hover{
+                    color: var(--color-primary-1);
+                    border-bottom: 1px solid var(--color-primary-1);
+                }
+            }
+        }
+        }
+        .btn-default{
+            display: none;
+        }
+    }
+}
+
+/* é importante que no media ele siga a mesma ordem das classes que está o codigo*/
+/* O @media no CSS é uma regra usada para criar media queries, essencial para o design responsivo. Ele aplica estilos CSS específicos baseados nas características do dispositivo, como largura/altura da tela, orientação (paisagem ou retrato) e resolução. Isso permite que um site se adapte automaticamente a celulares, tablets e desktops. */
+@media (min-width: 769px) {
+    header {
+        .navbar {
+            .btn-mobile {
+                display: none;
+            }
+            ul {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                gap: 1rem;
+                width: auto;
+                padding: 0;
+            }
+            .btn-default {
+                display: block;
+            }
+        }
+    }
+}

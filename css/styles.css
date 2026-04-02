@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('../css/variables.css');
+@import url('../css/navbar.css');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+
+
+a.btn{
+    text-decoration: none; 
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: transparent;
+    transition: background-color 0.4s ease;
+
+}
+
+#container {
+    background-image: url('../src/images/background-mobile.png');
+    background-size: contain;
+}
+
+.btn-mobile{
+    font-size: 1.5rem;
+}
+
+.btn-default{
+    background-color: var(--color-primary-1);
+    color: var(--color-neutral-0);
+
+    &:hover{
+        background-color: var(--color-primary-2);
+
+    }
+}
+
+/*HOME*/
+#home {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    min-height: calc(100vh - 96px);
+    /*"clamp": É uma função CSS que define um valor dentro de um intervalo (mínimo, ideal, máximo).
+    "0px" (Valor Mínimo): Se a tela for muito pequena (ex: celular), o padding-top não será menor que 0px (zero).
+    "5vw" (Valor Ideal/Fluido): Este é o valor preferido. vw significa viewport width (largura da tela). O padding será 5% da largura da tela. Se a tela aumentar, o padding aumenta; se diminuir, o padding diminui.
+    "32px" (Valor Máximo): Se a tela for muito grande (ex: desktop) e 5vw resultar em um valor maior que 32px (ex: 40px), o navegador trava o padding em 32px.
+    */;
+    padding-top: clamp(0px, 5vw, 32px);
+}
