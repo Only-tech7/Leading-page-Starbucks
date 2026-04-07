@@ -10,7 +10,30 @@
     font-family: 'poppins', sans-serif;
 }
 
+#container {
+    background-image: url('../src/images/background-mobile.png');
+    background-size: contain;
+}
 
+.title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--color-neutral-8);
+    font-weight: 700;
+    position: relative;
+
+     &::before {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: var(--color-primary-1);
+        position: absolute;
+        bottom: 0;
+        border-radius: 30px;
+     }
+        
+    }
 
 a.btn{
     text-decoration: none; 
@@ -28,10 +51,6 @@ a.btn{
 
 }
 
-#container {
-    background-image: url('../src/images/background-mobile.png');
-    background-size: contain;
-}
 
 .btn-mobile{
     font-size: 1.5rem;
@@ -47,6 +66,17 @@ a.btn{
     }
 }
 
+.btn-outlined {
+    background-color: transparent;
+    color: var(--color-primary-1);
+    border: 2px solid var(--color-primary-1);
+
+    &:hover {
+        background-color: var(--color-primary-1);
+        color: var(--color-neutral-0);
+    }
+}
+
 /*HOME*/
 #home {
     display: flex;
@@ -59,5 +89,238 @@ a.btn{
     "5vw" (Valor Ideal/Fluido): Este é o valor preferido. vw significa viewport width (largura da tela). O padding será 5% da largura da tela. Se a tela aumentar, o padding aumenta; se diminuir, o padding diminui.
     "32px" (Valor Máximo): Se a tela for muito grande (ex: desktop) e 5vw resultar em um valor maior que 32px (ex: 40px), o navegador trava o padding em 32px.
     */;
+    padding: 32px 4%;
     padding-top: clamp(0px, 5vw, 32px);
+    
+
+    .home-image {
+        width: clamp(300px, 50%, 400px);      
+}
+
+.home-title{
+     color: var(--color-neutral-8);
+        text-align: center;
+        font-size: clamp(3rem, 5w, 4.3rem);
+        text-transform: uppercase;
+        line-height: 1.2;
+        max-width: 700px;
+
+        span {
+            color: var(--color-primary-1);
+        }
+    }
+
+    .home-description {
+        color: var(--color-neutral-7);
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500px;
+        max-width: 600px;
+    }
+
+    .home-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 12px;
+    }
+    
+}
+
+#trending{
+    padding: 32px  4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    min-height: calc(100vh - 96px);
+
+    .trending-cards {
+        .trending-card{
+            position: relative;
+
+            img{
+                width: clamp(300px, 5vw, 600px);
+            }
+        
+
+            .trending-rate {
+            background-color: var(--color-neutral-0);
+            position: absolute;
+            bottom: 70px;
+            right: 30px;
+            padding: 5px 10px;
+            border-radius: 5px;
+                i {
+                    color: var(--color-secondary-1); 
+                }
+            }
+        }
+    }
+    
+            .trending-card-description {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: var(--color-neutral-8);
+            
+                span {
+                 font-size: 1rem;
+                 font-weight: 500px;
+                 color: var(--color-neutral-7) 
+                };
+            }
+        }
+
+        #about {
+            padding: 32px 4%;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            background-color: var(--color-primary-1);
+            background-image: url('../src/images/about/bg-about.png');
+            min-height: calc(100vh - 96px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 32px;
+
+            .title {
+                color: var(--color-neutral-0);
+
+                &::before {
+                    background-color: var(--color-primary-1);
+                }
+            }
+
+            .about-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+
+                .aboult-image {
+                    width: clamp(300px, 50vw, 500px);
+                }
+
+                .about-info {
+                    padding: 24px;
+                    border-radius: 20px;
+                    background-color: var(--color-primary-2);
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    
+
+                    h3 {
+                        color: var(--color-neutral-0);
+                        font-size: 1.8rem;
+                        margin-bottom: 4px;
+
+                        span {
+                            color: var(--color-secondary-1);  
+                        }
+                    }
+                    p{
+                        color: var(--color-neutral-0);
+                        font-size: 1rem;
+
+                        span{
+                            color: var(--color-secondary-1);
+                            font-weight: 500;
+                        }
+                    }
+                }
+                }
+            }
+        
+            #products {
+                padding: 48px 8%;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                gap: 58px;
+
+                .products-cards {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 58px;
+
+                    .product-card{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        background-color: var(--color-primary-1);
+                        background-image: url('../src/images/products/background.png');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        position: 16px;
+                        border-radius: 50px;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+                        img {
+                            width: 300px;
+                            position: relative;
+                            top: -70px;
+                            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+                        }
+
+                        .product-content {
+                            margin-top: -70px
+
+                          
+                            h3 {
+                                color: var(--color-neutral-0);
+                                font-size: 1.8rem;
+                                text-align: center;
+                                margin-bottom: 8px;
+                            }
+                            }
+                            
+                    }   
+            
+                }
+            }
+            
+    
+        @media (min-width: 768px) {
+          #container {
+            background-image: url('../src/images/background-desktop.png');
+            background-size: cover;
+            background-position: start;
+            background-repeat: no-repeat;
+          }  
+        #trending {
+            .trending-cards {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+        }
+}
+
+@media (min-width: 1200px) {
+#about {
+    margin: 4%;
+    justify-content: center; }
+
+
+    .about-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 48px;
+    }
+
+    .about-image {
+        /*A propriedade order no CSS é usada para alterar a ordem visual de itens dentro de um contêiner Flexbox ou Grid, sem precisar modificar a estrutura HTML. */
+        order: 1;
+    }
+
+    .about-info:first-child {
+        order:2
+    }
+
+    .about-info:last-child {
+        order:3
+}
+
 }
