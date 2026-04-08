@@ -137,6 +137,10 @@ a.btn{
     .trending-cards {
         .trending-card{
             position: relative;
+        /* "transition: transform 0.3s ease"
+         Serve pra deixar a animação suave, em vez de acontecer de forma brusca.*/
+            transition: all 0.5s ease, box-shadow 0.3s ease;
+            cursor: pointer;            
 
             img{
                 width: clamp(300px, 5vw, 600px);
@@ -156,6 +160,43 @@ a.btn{
             }
         }
     }
+
+        /* ":hover" É um “gatilho” que ativa quando o mouse passa por cima do elemento.*/
+     .trending-card:hover ,.trending-card{
+        opacity: 0.6;}
+        /* "transform: scale(1.1) translateY(-10px)" A propriedade "transform" é usada para aplicar transformações visuais a um elemento.
+             Neste caso, "scale(1.1)" aumenta o tamanho do elemento em 10%, e "translateY(-10px)" move o elemento 10 pixels para cima. 
+             O resultado é que, quando o usuário passa o mouse sobre a carta de tendência, ela aumenta de tamanho e se eleva ligeiramente, criando um efeito de destaque visual.*/
+            .trending-cards .trending-card:hover {
+                opacity: 1;
+             transform: scale(1.1) translateY(-10px);
+            /* "z-index: 10" A propriedade "z-index" controla a ordem de empilhamento dos elementos posicionados.*/
+                z-index: 10;
+                }
+                /*resumo:
+                O código CSS define um estilo para um elemento com a classe "trending-card" dentro de um contêiner "trending-cards".Efeito de destaque ao passar o mouse no card:
+                - transition: suaviza a animação
+                - :hover: ativa quando o mouse está sobre o elemento
+                - transform: aumenta o tamanho (scale) e move levemente para cima (translateY)
+                - z-index: garante que o card fique acima dos outros*/
+
+                .trending-card {
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+
+                    /* explicação sobre o efeito que adiciona uma sombra ao passar o mouse sobre o card, criando um efeito de destaque visual:
+                        1. Quando o mouse entra na área geral (.trending-cards),
+                        todos os cards ficam levemente apagados (opacity: 0.6)
+
+                        2. Quando o mouse passa sobre um card específico,
+                        ele volta ao normal (opacity: 1), aumenta de tamanho (scale)
+                        e sobe levemente (translateY), criando um efeito de destaque
+
+                        3. O z-index garante que o card destacado fique na frente dos outros
+
+                        4. A propriedade transition suaviza a animação*/
+                }
+            
     
             .trending-card-description {
                 display: flex;
@@ -235,24 +276,28 @@ a.btn{
                 padding: 48px 8%;
                 display: flex;
                 flex-direction: column;
-                align-self: center;
+                align-items: center;
                 gap: 58px;
+                
+                
 
                 .products-cards {
                     display: flex;
                     flex-direction: column;
                     gap: 58px;
+                    cursor: pointer;
 
                     .product-card{
                         display: flex;
                         flex-direction: column;
+                        align-items: center;
                         justify-content: center;
                         background-color: var(--color-primary-1);
                         background-image: url('../src/images/products/background.png');
                         background-size: cover;
                         background-repeat: no-repeat;
                         background-position: center;
-                        position: 16px;
+                        padding: 16px;
                         border-radius: 50px;
                         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 
@@ -264,14 +309,21 @@ a.btn{
                         }
 
                         .product-content {
-                            margin-top: -70px
+                            margin-top: -70px;
 
                           
                             h3 {
                                 color: var(--color-neutral-0);
                                 font-size: 1.8rem;
-                                text-align: center;
-                                margin-bottom: 8px;
+                                display: flex;
+                                align-items: center;
+                                flex-direction: column;
+
+                                span{
+                                    color: var(--color-secondary-1);
+                                    font-size: 1.2rem;
+                                }
+                                
                             }
                             }
                             
@@ -287,6 +339,7 @@ a.btn{
             background-size: cover;
             background-position: start;
             background-repeat: no-repeat;
+            ;
           }  
         #trending {
             .trending-cards {
@@ -295,6 +348,36 @@ a.btn{
                 flex-wrap: wrap;
                 gap: 24px;
             }
+        }
+
+        #products {
+            min-height: 100vh;
+            gap: 8rem;
+            
+
+            .products-cards {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 24px;
+
+                .product-card {
+                    img {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+}
+
+footer {
+    background-color: var(--color-primary-1);
+    color: var(--color-neutral-0);
+    text-align: center;
+    padding: 12px;
+
+        p{
+            font-size: 1rem;
         }
 }
 
